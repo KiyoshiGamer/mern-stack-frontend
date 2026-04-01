@@ -7,11 +7,12 @@ import { useAuthContext } from "../hooks/useAuthContext";
 const Home = () => {
   const { workouts, dispatch } = useWorkoutsContext();
   const { user } = useAuthContext();
+  const API_URL = import.meta.env.VITE_API_URL
 
   useEffect(() => {
     const fetchWorkout = async () => {
       try {
-        const response = await fetch("/api/workouts", {
+        const response = await fetch(`${API_URL}/api/workouts`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },

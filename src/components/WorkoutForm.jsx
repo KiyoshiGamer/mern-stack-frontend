@@ -25,7 +25,7 @@ const WorkoutForm = () => {
         // frontend talks to the backend
         // fetch(url, options)
         const API_URL = import.meta.env.VITE_API_URL
-        const response = await fetch(`${API_URL}/api/workout`, {
+        const response = await fetch(`${API_URL}/api/workouts`, {
             method: 'POST',
             // this is the content of the request and send this
             // http request can only send strings or text so we need to stringify it
